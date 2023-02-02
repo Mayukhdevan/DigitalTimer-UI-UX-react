@@ -11,7 +11,11 @@ class DigitalTimer extends Component {
     slideIn: false,
     rotate: false,
   }
-
+  
+  conmponentWillUnmount() {
+    clearTimeout(this.timerId)
+  }
+  
   handleState = () => {
     const {isPaused, timer, slideIn} = this.state
     this.setState({slideIn: true})
